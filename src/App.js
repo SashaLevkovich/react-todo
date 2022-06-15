@@ -19,14 +19,14 @@ function App() {
     useEffect(()=> {
             axios
                 .get('http://localhost:3001/lists?_expand=color&_embed=tasks', {
-                    headers: { 'Access-Control-Allow-Origin': '*' }
+                    headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .then(({ data }) => {
                     setLists(data);
                 });
             axios
                 .get('http://localhost:3001/colors', {
-                    headers: { 'Access-Control-Allow-Origin': '*' }
+                    headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .then(({ data }) => {
                     setColors(data);
@@ -73,7 +73,7 @@ function App() {
             setLists(newList);
             axios
                 .delete('http://localhost:3001/tasks/' + taskId, {
-                    headers: { 'Access-Control-Allow-Origin': '*' }
+                    headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .catch(() => {
                 alert('Не удалось удалить задачу');
@@ -98,7 +98,7 @@ function App() {
             setLists(newList);
             axios
                 .patch('http://localhost:3001/tasks/' + taskObj.id, {text: taskObj.newTask}, {
-                    headers: { 'Access-Control-Allow-Origin': '*' }
+                    headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .catch(() => {
                     alert('Не удалось удалить задачу');
@@ -123,7 +123,7 @@ function App() {
             .patch('http://localhost:3001/tasks/' + taskId, {
                 completed
             }, {
-                headers: { 'Access-Control-Allow-Origin': '*' }
+                headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
             })
             .catch(() => {
                 alert('Не удалось обновить задачу');

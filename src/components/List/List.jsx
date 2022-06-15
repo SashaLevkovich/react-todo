@@ -12,7 +12,7 @@ const List = ({ items, isRemove, onClick, onRemove, onChoose, activeTag, onClick
 	const removeList = (item) => {
 		if ( window.confirm("Вы действительно хотите удалить?") ) {
 			axios.delete('http://localhost:3001/lists/' + item.id, {
-				headers: { 'Access-Control-Allow-Origin': '*' }
+				headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 			}).then(() => onRemove(item.id))
 		}
 	}

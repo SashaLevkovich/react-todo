@@ -16,7 +16,7 @@ const AddTasksForm = ({ list, colors, onAddTask, addNewTag }) => {
 	const fetchTask = task => {
 		axios
 			.post('http://localhost:3001/tasks', task, {
-				headers: { 'Access-Control-Allow-Origin': '*' }
+				headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 			}).then(({ data }) => {
 				onAddTask(list.id, data);
 				visibleForm();
@@ -34,7 +34,7 @@ const AddTasksForm = ({ list, colors, onAddTask, addNewTag }) => {
 		if ( newTag ) {
 			axios
 				.post('http://localhost:3001/lists', { name: newTag, colorId: 3 }, {
-					headers: { 'Access-Control-Allow-Origin': '*' }
+					headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 				})
 				.then(({ data })=> {
 					const color = colors.filter(color => color.id === 3)[0];

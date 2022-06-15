@@ -37,7 +37,7 @@ const AddTag = ({ colors, onAddTag }) => {
 		
 		 axios
 			.post('http://localhost:3001/lists', { name: inputValue, colorId: selectColor }, {
-				headers: { 'Access-Control-Allow-Origin': '*' }
+				headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 			})
 			.then(({ data })=> {
 			const color = colors.filter(color => color.id === selectColor)[0];

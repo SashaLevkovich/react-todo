@@ -39,7 +39,7 @@ const Tasks = ({
 			axios.patch('http://localhost:3001/lists/' + list.id, {
 				name: newTitle
 			}, {
-					headers: { 'Access-Control-Allow-Origin': '*' }
+					headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 				})
 				.catch(()=> alert('Не удалось изменить название списка!'))
 		}

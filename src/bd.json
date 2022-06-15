@@ -48,24 +48,6 @@
       "text": "хлеб",
       "completed": true,
       "id": 8
-    },
-    {
-      "listId": 3,
-      "text": "ne #qdq",
-      "completed": false,
-      "id": 9
-    },
-    {
-      "listId": 16,
-      "text": "ne #qd",
-      "completed": false,
-      "id": 10
-    },
-    {
-      "listId": 3,
-      "text": "qwe",
-      "completed": false,
-      "id": 11
     }
   ],
   "colors": [
