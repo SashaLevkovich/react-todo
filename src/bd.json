@@ -12,13 +12,8 @@
     },
     {
       "id": 3,
-      "name": "Практика",
+      "name": "Практикa",
       "colorId": 3
-    },
-    {
-      "id": 4,
-      "name": "Книги",
-      "colorId": 2
     },
     {
       "id": 5,
@@ -28,7 +23,17 @@
     {
       "name": "shop",
       "colorId": 3,
-      "id": 6
+      "id": 14
+    },
+    {
+      "name": "Спорт",
+      "colorId": 2,
+      "id": 15
+    },
+    {
+      "name": "qd",
+      "colorId": 3,
+      "id": 16
     }
   ],
   "tasks": [
@@ -39,28 +44,28 @@
       "completed": true
     },
     {
-      "listId": 4,
-      "text": "Прочесть 1984",
-      "completed": false,
-      "id": 6
-    },
-    {
       "listId": 1,
       "text": "хлеб",
       "completed": true,
       "id": 8
     },
     {
-      "listId": 1,
-      "text": "Молоко #shop",
+      "listId": 3,
+      "text": "ne #qdq",
       "completed": false,
       "id": 9
     },
     {
-      "listId": 6,
-      "text": "Молоко #shop",
+      "listId": 16,
+      "text": "ne #qd",
       "completed": false,
       "id": 10
+    },
+    {
+      "listId": 3,
+      "text": "qwe",
+      "completed": false,
+      "id": 11
     }
   ],
   "colors": [

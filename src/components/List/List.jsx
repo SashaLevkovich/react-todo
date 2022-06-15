@@ -11,7 +11,9 @@ import { VscClose } from 'react-icons/vsc'
 const List = ({ items, isRemove, onClick, onRemove, onChoose, activeTag, onClickItem  }) => {
 	const removeList = (item) => {
 		if ( window.confirm("Вы действительно хотите удалить?") ) {
-			axios.delete('http://localhost:3001/lists/' + item.id).then(() => onRemove(item.id))
+			axios.delete('http://localhost:3001/lists/' + item.id, {
+				headers: { 'Access-Control-Allow-Origin': '*' }
+			}).then(() => onRemove(item.id))
 		}
 	}
 	

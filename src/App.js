@@ -18,22 +18,28 @@ function App() {
     
     useEffect(()=> {
             axios
-                .get('http://localhost:3001/lists?_expand=color&_embed=tasks')
+                .get('http://localhost:3001/lists?_expand=color&_embed=tasks', {
+                    headers: { 'Access-Control-Allow-Origin': '*' }
+                })
                 .then(({ data }) => {
                     setLists(data);
                 });
             axios
-                .get('http://localhost:3001/colors')
+                .get('http://localhost:3001/colors', {
+                    headers: { 'Access-Control-Allow-Origin': '*' }
+                })
                 .then(({ data }) => {
                     setColors(data);
                 });
     }, [tag]);
     
     const onAddTag = tag =>{
-       const newTag = [
-           ...lists, tag
-       ];
-       setLists(newTag);
+        if ( tag.name !== lists.name ) {
+            const newTag = [
+                ...lists, tag
+            ];
+            setLists(newTag);
+        }
     };
     
     const onAddTask = (listId, task ) =>{
@@ -66,7 +72,9 @@ function App() {
             });
             setLists(newList);
             axios
-                .delete('http://localhost:3001/tasks/' + taskId)
+                .delete('http://localhost:3001/tasks/' + taskId, {
+                    headers: { 'Access-Control-Allow-Origin': '*' }
+                })
                 .catch(() => {
                 alert('Не удалось удалить задачу');
             });
@@ -89,7 +97,9 @@ function App() {
             setCanEdit(true);
             setLists(newList);
             axios
-                .patch('http://localhost:3001/tasks/' + taskObj.id, {text: taskObj.newTask})
+                .patch('http://localhost:3001/tasks/' + taskObj.id, {text: taskObj.newTask}, {
+                    headers: { 'Access-Control-Allow-Origin': '*' }
+                })
                 .catch(() => {
                     alert('Не удалось удалить задачу');
                 });
@@ -112,6 +122,8 @@ function App() {
         axios
             .patch('http://localhost:3001/tasks/' + taskId, {
                 completed
+            }, {
+                headers: { 'Access-Control-Allow-Origin': '*' }
             })
             .catch(() => {
                 alert('Не удалось обновить задачу');
@@ -194,6 +206,7 @@ function App() {
                                  onCompleteTask={ onCompleteTask }
                                  setTag={setTag}
                                  colors = { colors }
+                                 
                              />
                          )
                      }

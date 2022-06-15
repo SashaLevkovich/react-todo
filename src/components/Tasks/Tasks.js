@@ -19,11 +19,11 @@ const Tasks = ({
 	               onCompleteTask,
 	               setTag,
 	               colors,
-	               
 }) => {
 	
 	const [canEdit, setCanEdit] = useState(true);
 	const [newTitle, setNewTitle] = useState('');
+	
 	
 	const addNewTag = tag => {
 		setTag(tag);
@@ -38,7 +38,9 @@ const Tasks = ({
 			onEditTitle(list.id, newTitle)
 			axios.patch('http://localhost:3001/lists/' + list.id, {
 				name: newTitle
-			})
+			}, {
+					headers: { 'Access-Control-Allow-Origin': '*' }
+				})
 				.catch(()=> alert('Не удалось изменить название списка!'))
 		}
 			setCanEdit(true)

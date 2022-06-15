@@ -36,7 +36,9 @@ const AddTag = ({ colors, onAddTag }) => {
 		setLoad(true);
 		
 		 axios
-			.post('http://localhost:3001/lists', { name: inputValue, colorId: selectColor })
+			.post('http://localhost:3001/lists', { name: inputValue, colorId: selectColor }, {
+				headers: { 'Access-Control-Allow-Origin': '*' }
+			})
 			.then(({ data })=> {
 			const color = colors.filter(color => color.id === selectColor)[0];
 			const listObj = { ...data, color, tasks: []}
