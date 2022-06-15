@@ -17,14 +17,17 @@ function App() {
     let navigate = useNavigate();
     
     useEffect(()=> {
-        axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks')
-            .then(({ data }) => {
-                setLists(data);
-            });
-        axios.get('http://localhost:3001/colors').then(({ data }) => {
-            setColors(data);
-        });
-    }, []);
+            axios
+                .get('http://localhost:3001/lists?_expand=color&_embed=tasks')
+                .then(({ data }) => {
+                    setLists(data);
+                });
+            axios
+                .get('http://localhost:3001/colors')
+                .then(({ data }) => {
+                    setColors(data);
+                });
+    }, [tag]);
     
     const onAddTag = tag =>{
        
