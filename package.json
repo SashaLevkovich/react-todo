@@ -2,6 +2,7 @@
   "name": "todos-tt",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -22,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "json-server ./src/bd.json --watch  --port 3001"
+    "serve": "json-server ./src/bd.json -w -p 3001"
   },
   "eslintConfig": {
     "extends": [

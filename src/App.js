@@ -12,20 +12,25 @@ function App() {
     const [activeTag, setActiveTag] = useState(null);
     const [tag, setTag] = useState(null);
     
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credential': true
+    }
+    
     const location = useLocation();
     
     let navigate = useNavigate();
     
     useEffect(()=> {
             axios
-                .get('http://localhost:3001/lists?_expand=color&_embed=tasks', {
+                .get( '/lists?_expand=color&_embed=tasks', {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .then(({ data }) => {
                     setLists(data);
                 });
             axios
-                .get('http://localhost:3001/colors', {
+                .get('/colors', {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .then(({ data }) => {
@@ -72,7 +77,7 @@ function App() {
             });
             setLists(newList);
             axios
-                .delete('http://localhost:3001/tasks/' + taskId, {
+                .delete('/tasks/' + taskId, {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .catch(() => {
@@ -97,7 +102,7 @@ function App() {
             setCanEdit(true);
             setLists(newList);
             axios
-                .patch('http://localhost:3001/tasks/' + taskObj.id, {text: taskObj.newTask}, {
+                .patch('/tasks/' + taskObj.id, {text: taskObj.newTask}, {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .catch(() => {
@@ -120,7 +125,7 @@ function App() {
         });
         setLists(newList);
         axios
-            .patch('http://localhost:3001/tasks/' + taskId, {
+            .patch('/tasks/' + taskId, {
                 completed
             }, {
                 headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }

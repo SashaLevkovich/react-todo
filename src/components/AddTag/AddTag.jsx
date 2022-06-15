@@ -36,7 +36,7 @@ const AddTag = ({ colors, onAddTag }) => {
 		setLoad(true);
 		
 		 axios
-			.post('http://localhost:3001/lists', { name: inputValue, colorId: selectColor }, {
+			.post('/lists', { name: inputValue, colorId: selectColor }, {
 				headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 			})
 			.then(({ data })=> {

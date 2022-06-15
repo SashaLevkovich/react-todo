@@ -36,7 +36,7 @@ const Tasks = ({
 	const editTitle = () => {
 		if ( newTitle ) {
 			onEditTitle(list.id, newTitle)
-			axios.patch('http://localhost:3001/lists/' + list.id, {
+			axios.patch('/lists/' + list.id, {
 				name: newTitle
 			}, {
 					headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
