@@ -30,12 +30,10 @@ function App() {
     }, [tag]);
     
     const onAddTag = tag =>{
-       
        const newTag = [
            ...lists, tag
        ];
        setLists(newTag);
-       
     };
     
     const onAddTask = (listId, task ) =>{
@@ -58,7 +56,7 @@ function App() {
         setLists(newList);
     };
     
-    const onRemoveTask = (listId, taskId, task) => {
+    const onRemoveTask = (listId, taskId) => {
         if (window.confirm('Вы действительно хотите удалить задачу?')) {
             const newList = lists.map(item => {
                 if (item.id === listId) {
@@ -179,6 +177,7 @@ function App() {
                                  onEditTask={ onEditTask }
                                  onCompleteTask={ onCompleteTask }
                                  colors = { colors }
+                                 setTag={setTag}
                                  withoutEmpty
                              />
                          )

@@ -13,34 +13,11 @@ const AddTasksForm = ({ list, colors, onAddTask, addNewTag }) => {
 		setInputValue('')
 	}
 	
-	const newTag = () => {
-		const newTag = (inputValue.split('#')[1]);
-		console.log();
-		if ( newTag ) {
-			axios
-				.post('http://localhost:3001/lists', { name: newTag, colorId: 3 })
-				.then(({ data })=> {
-					const color = colors.filter(color => color.id === 3)[0];
-					const listObj = { ...data, color, tasks: []}
-					addNewTag(listObj);
-				})
-		}
-	}
-	
-	const addTask = () => {
-		if ( inputValue.indexOf('#') ) {
-			newTag();
-		}
-			const task = {
-				listId: list.id,
-				text: inputValue,
-				completed: false
-			};
-		setIsLoading(true)
+	const fetchTask = task => {
 		axios
 			.post('http://localhost:3001/tasks', task).then(({ data }) => {
-			onAddTask(list.id, data);
-			visibleForm();
+				onAddTask(list.id, data);
+				visibleForm();
 			})
 			.catch(e => {
 				alert('Ошибка при добавлении задачи!');
@@ -48,6 +25,39 @@ const AddTasksForm = ({ list, colors, onAddTask, addNewTag }) => {
 			.finally(() => {
 				setIsLoading(false)
 			});
+	}
+	
+	const newTagTask = () => {
+		const newTag = (inputValue.split('#')[1]);
+		if ( newTag ) {
+			axios
+				.post('http://localhost:3001/lists', { name: newTag, colorId: 3 })
+				.then(({ data })=> {
+					const color = colors.filter(color => color.id === 3)[0];
+					const listObj = { ...data, color, tasks: []}
+					addNewTag(listObj);
+					
+					const newTask = {
+						listId: listObj.id,
+						text: inputValue,
+						completed: false
+					}
+					fetchTask(newTask);
+				})
+		}
+	}
+	
+	const addTask = () => {
+		if ( inputValue.indexOf('#') ) {
+			newTagTask();
+		}
+			const task = {
+				listId: list.id,
+				text: inputValue,
+				completed: false
+			};
+		fetchTask(task);
+		setIsLoading(true)
 	}
 	
 	return (

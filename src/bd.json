@@ -12,7 +12,7 @@
     },
     {
       "id": 3,
-      "name": "Фильмы и сериалы",
+      "name": "Практика",
       "colorId": 3
     },
     {
@@ -24,6 +24,11 @@
       "id": 5,
       "name": "Личное",
       "colorId": 1
+    },
+    {
+      "name": "shop",
+      "colorId": 3,
+      "id": 6
     }
   ],
   "tasks": [
@@ -46,22 +51,16 @@
       "id": 8
     },
     {
-      "listId": 5,
-      "text": "йцуйцу #fe",
+      "listId": 1,
+      "text": "Молоко #shop",
       "completed": false,
       "id": 9
     },
     {
-      "listId": 5,
-      "text": "qweqwe #ewe",
+      "listId": 6,
+      "text": "Молоко #shop",
       "completed": false,
       "id": 10
-    },
-    {
-      "listId": 5,
-      "text": "ккк #fff",
-      "completed": false,
-      "id": 11
     }
   ],
   "colors": [
