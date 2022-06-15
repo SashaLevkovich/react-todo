@@ -1,0 +1,248 @@
+.tasks {
+  $self: &;
+  -webkit-user-select: none;
+  overflow: auto;
+  
+  &__text {
+	display : flex;
+	align-items : center;
+	margin-left: 10px;
+	font-weight: 500;
+	
+		svg {
+		  	margin-left: 10px;
+		  }
+		.edit {
+		  width  : 20px;
+		  height : 20px;
+		 	opacity: 0.2;
+		  	
+		  	&:hover {
+			  color: #64c4ed;
+			  opacity: 0.8;
+			  }
+		  }
+		.delete {
+		  width  : 20px;
+		  height : 20px;
+		  opacity: 0.2;
+		  
+		  &:hover {
+			color: #ff6464;
+			opacity: 0.8;
+			}
+		  }
+	}
+  
+  &:not(:last-of-type) {
+	  margin-bottom : 50px;
+	  }
+  
+  	&__head {
+	  margin-bottom : 40px;
+	  }
+  
+  	&__title {
+	  width : 100%;
+	  font-family: Montserrat;
+	  font-weight: bold;
+	  font-size: 32px;
+	  line-height: 39px;
+	  color: #64c4ed;
+	  padding-bottom: 10px;
+	  border: none;
+	  border-bottom: 1px solid #f2f2f2;
+	
+	  margin-bottom : 30px;
+	  
+	  	&:hover #{$self}__change-icon{
+			opacity: 0.2;
+		}
+	  }
+  
+  
+  
+  #{$self}__change-icon {
+	width  : 20px;
+	height : 20px;
+	color: #08001a;
+	opacity: 0;
+	margin-left : 15px;
+	cursor: pointer;
+	
+		&.done__icon {
+		  opacity: 1;
+		  color: #fff;
+		  margin-right : 15px;
+		  }
+	
+	&:hover {
+	  opacity: 0.8;
+	  }
+	}
+  
+  .done {
+	width : 115px;
+	display : flex;
+	align-items : center;
+	}
+  
+  	&__items {
+	  h2 {
+		font-family : Montserrat;
+		font-weight : bold;
+		font-size : 22px;
+		color: #c9d1d3;
+		text-align : center;
+		}
+	  
+	  	&-row {
+		  display : flex;
+		  align-items : center;
+		  justify-content : center;
+		  margin-bottom : 15px;
+		
+		  &:hover &-actions {
+			opacity: 1;
+			}
+		
+		  #{$self}__text {
+			width : 100%;
+			}
+		  
+		  &-actions {
+			display: flex;
+			opacity: 0;
+			transition: opacity 0.15s ease-in-out;
+		 
+			div {
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  width: 32px;
+			  height: 32px;
+			  background-color: lighten(#f4f6f8, 2%);
+			  border-radius: 6px;
+			  margin-left: 5px;
+			  cursor: pointer;
+			
+			  &:hover {
+				background-color: darken(#f4f6f8, 2%);
+				  svg {
+					opacity: 0.9;
+					}
+				}
+			
+			  svg {
+				width: 11px;
+				height: 11px;
+				opacity: 0.4;
+				}
+			  }
+			}
+		  
+		  input {
+			margin-left: 15px;
+			border: 0;
+			font-size: 16px;
+			width: 100%;
+			background-color: #fff;
+			}
+		  }
+	  }
+  
+  	.checkbox {
+	 
+	  cursor: pointer;
+	  
+	  	input {
+		  display : none;
+		  }
+	  
+	  	&:hover {
+		  	.checkbox__status {
+			  background-color: #f2f2f2;
+			  	.checked{
+				  opacity: 1;
+				  	path {
+					  	color: #b2b2b2;
+					  }
+				  }
+			  }
+		  }
+	  
+	  	&__status {
+		  width  : 20px;
+		  height : 20px;
+		  display : inline-block;
+		  border: 2px solid  #e8e8e8;
+		  border-radius: 100%;
+		  display : flex;
+		  align-items : center;
+		  justify-content : center;
+		  
+		  	.checked {
+			  opacity: 0;
+			  color: #fff;
+			  }
+		  }
+	  
+		input:checked + .checkbox__status {
+		  background-color: #4dd599;
+		  border-color: #4dd599;
+		  
+		  .checked{
+			opacity: 1;
+			path {
+			  color: #fff;
+			  }
+			}
+		  }
+	  }
+  
+  		&__form {
+		  margin-top : 30px;
+		  
+		  	&-add {
+			  input {
+				margin-bottom : 15px;
+				}
+			  
+			  .button:last-child {
+				 	margin-left: 10px;
+				}
+			  }
+		  
+		  
+		  	&-new {
+			  width : 200px;
+			  display: flex;
+			  align-items: center;
+			  cursor: pointer;
+			  padding: 10px 1px;
+			  opacity: 0.4;
+			  
+				&:hover {
+				  opacity : 0.8;
+				  transition: opacity .2s;
+				  }
+			  
+			  h3 {
+				flex: 1;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				width: 160px;
+				white-space: nowrap;
+				font-weight: 400;
+				font-size: 18px;
+				-webkit-user-select: none;
+				margin-left : 20px;
+				}
+			  
+			  	svg {
+				  width  : 24px;
+				  height : 24px;
+				  }
+			  }
+		  }
+  }

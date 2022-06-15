@@ -1,13 +1,76 @@
-body {
+* {
+  font-family: "Roboto", -apple-system, system-ui, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.todo {
+  width: 100%;
+  min-height: 685px;
+  display: flex;
 }
+.todo__sidebar {
+  width: 200px;
+  min-height: calc(100% - 120px);
+  padding: 60px 20px;
+  background-color: #f4f6f8;
+  border-right: 1px solid #f1f1f1;
+}
+.todo__icon {
+  width: 22px;
+  height: 22px;
+}
+.todo__tasks {
+  width: 100%;
+  padding: 60px;
+}
+
+.field {
+  background: #ffffff;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 14px;
+}
+.field:focus {
+  border-color: #dbdbdb;
+}
+
+.button {
+  background: #4dd599;
+  border-radius: 4px;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.button:hover {
+  background: #34cf8b;
+}
+.button:active {
+  background: #2ec180;
+}
+.button:disabled {
+  background: #d8d8d8;
+}
+.button--grey {
+  background: #f4f6f8;
+  color: #444444;
+}
+.button--grey:hover {
+  background: #ebeef2;
+}
+.button--grey:active {
+  background: #e1e7ec;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,85 @@
+.list {
+  $self: &;
+  
+  margin-bottom : 30px;
+  
+  &__add-icon {
+		opacity: 0.4;
+	
+	&:hover {
+	  opacity: 1;
+	  transition: all .4s;
+	  }
+	}
+  
+  li {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 10px 12px;
+	margin-bottom : 5px;
+  
+	font-size : 14px;
+  
+	transition: background-color 0.15s ease-in-out;
+	
+	&:hover {
+	  background: rgba(255,255,255, 0.8);
+	  }
+	
+	&:hover #{$self}__remove {
+	  opacity: 0.2;
+	  }
+  
+	#{$self}__remove {
+	  opacity : 0;
+	  
+	  &:hover {
+		opacity : 1;
+		}
+	  }
+	
+	&.active {
+	  background: #FFFFFF;
+	  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+	  border-radius: 4px;
+	  }
+	
+	.badge {
+	  width : 10px;
+	  height : 10px;
+	  border-radius: 30px;
+	  color: #42B883;
+	  
+	  position : relative;
+	  left : 5px;
+	  }
+	
+	h3 {
+	  flex: 1;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	  width: 160px;
+	  white-space: nowrap;
+	  
+	  font-weight: 400;
+	  font-size : 14px;
+	  
+	  -webkit-user-select: none;
+	  }
+  
+	i {
+	  margin-right : 15px;
+	  }
+	
+	.todo__icon {
+	  opacity: 0.7;
+	  margin-right : 8px;
+	  }
+	}
+  }
+
+.todo__icon{
+  width  : 16px;
+  height : 16px;
+  }

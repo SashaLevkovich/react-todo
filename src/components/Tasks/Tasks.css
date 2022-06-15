@@ -1,0 +1,203 @@
+.tasks {
+  -webkit-user-select: none;
+  overflow: auto;
+}
+.tasks__text {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-weight: 500;
+}
+.tasks__text svg {
+  margin-left: 10px;
+}
+.tasks__text .edit {
+  width: 20px;
+  height: 20px;
+  opacity: 0.2;
+}
+.tasks__text .edit:hover {
+  color: #64c4ed;
+  opacity: 0.8;
+}
+.tasks__text .delete {
+  width: 20px;
+  height: 20px;
+  opacity: 0.2;
+}
+.tasks__text .delete:hover {
+  color: #ff6464;
+  opacity: 0.8;
+}
+.tasks:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+.tasks__head {
+  margin-bottom: 40px;
+}
+.tasks__title {
+  width: 100%;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  color: #64c4ed;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 30px;
+}
+.tasks__title:hover .tasks__change-icon {
+  opacity: 0.2;
+}
+.tasks .tasks__change-icon {
+  width: 20px;
+  height: 20px;
+  color: #08001a;
+  opacity: 0;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.tasks .tasks__change-icon.done__icon {
+  opacity: 1;
+  color: #fff;
+  margin-right: 15px;
+}
+.tasks .tasks__change-icon:hover {
+  opacity: 0.8;
+}
+.tasks .done {
+  width: 115px;
+  display: flex;
+  align-items: center;
+}
+.tasks__items h2 {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 22px;
+  color: #c9d1d3;
+  text-align: center;
+}
+.tasks__items-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.tasks__items-row:hover .tasks__items-row-actions {
+  opacity: 1;
+}
+.tasks__items-row .tasks__text {
+  width: 100%;
+}
+.tasks__items-row-actions {
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+.tasks__items-row-actions div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #fafbfc;
+  border-radius: 6px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.tasks__items-row-actions div:hover {
+  background-color: #eef1f4;
+}
+.tasks__items-row-actions div:hover svg {
+  opacity: 0.9;
+}
+.tasks__items-row-actions div svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0.4;
+}
+.tasks__items-row input {
+  margin-left: 15px;
+  border: 0;
+  font-size: 16px;
+  width: 100%;
+  background-color: #fff;
+}
+.tasks .checkbox {
+  cursor: pointer;
+}
+.tasks .checkbox input {
+  display: none;
+}
+.tasks .checkbox:hover .checkbox__status {
+  background-color: #f2f2f2;
+}
+.tasks .checkbox:hover .checkbox__status .checked {
+  opacity: 1;
+}
+.tasks .checkbox:hover .checkbox__status .checked path {
+  color: #b2b2b2;
+}
+.tasks .checkbox__status {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 2px solid #e8e8e8;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tasks .checkbox__status .checked {
+  opacity: 0;
+  color: #fff;
+}
+.tasks .checkbox input:checked + .checkbox__status {
+  background-color: #4dd599;
+  border-color: #4dd599;
+}
+.tasks .checkbox input:checked + .checkbox__status .checked {
+  opacity: 1;
+}
+.tasks .checkbox input:checked + .checkbox__status .checked path {
+  color: #fff;
+}
+.tasks__form {
+  margin-top: 30px;
+}
+.tasks__form-add input {
+  margin-bottom: 15px;
+}
+.tasks__form-add .button:last-child {
+  margin-left: 10px;
+}
+.tasks__form-new {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 1px;
+  opacity: 0.4;
+}
+.tasks__form-new:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.tasks__form-new h3 {
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 160px;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 18px;
+  -webkit-user-select: none;
+  margin-left: 20px;
+}
+.tasks__form-new svg {
+  width: 24px;
+  height: 24px;
+}
+
+/*# sourceMappingURL=Tasks.css.map */
