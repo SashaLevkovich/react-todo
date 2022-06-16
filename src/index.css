@@ -17,7 +17,7 @@
 }
 .todo__sidebar {
   width: 200px;
-  min-height: calc(100% - 120px);
+  min-height: 100%;
   padding: 60px 20px;
   background-color: #f4f6f8;
   border-right: 1px solid #f1f1f1;

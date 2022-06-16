@@ -21,11 +21,6 @@
       "colorId": 1
     },
     {
-      "name": "shop",
-      "colorId": 3,
-      "id": 14
-    },
-    {
       "name": "Спорт",
       "colorId": 2,
       "id": 15
@@ -36,7 +31,7 @@
       "id": 3,
       "listId": 2,
       "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
-      "completed": true
+      "completed": false
     },
     {
       "listId": 1,
