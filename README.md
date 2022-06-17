@@ -11,5 +11,3 @@
 
 ### Запуск:
 **npm start**
-
-**npm run serve**
