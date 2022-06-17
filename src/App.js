@@ -12,11 +12,6 @@ function App() {
     const [activeTag, setActiveTag] = useState(null);
     const [tag, setTag] = useState(null);
     
-    const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credential': true
-    }
-    
     const location = useLocation();
     
     let navigate = useNavigate();
