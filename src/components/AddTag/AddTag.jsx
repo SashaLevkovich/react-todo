@@ -36,7 +36,7 @@ const AddTag = ({ colors, onAddTag }) => {
 		setLoad(true);
 		
 		 axios
-			.post('/lists', { name: inputValue, colorId: selectColor }, {
+			.post('http://todo-server-sl.herokuapp.com/lists', { name: inputValue, colorId: selectColor }, {
 				headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
 			})
 			.then(({ data })=> {

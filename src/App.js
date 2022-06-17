@@ -18,14 +18,14 @@ function App() {
     
     useEffect(()=> {
             axios
-                .get( '/lists?_expand=color&_embed=tasks', {
+                .get( 'http://todo-server-sl.herokuapp.com/lists?_expand=color&_embed=tasks', {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .then(({ data }) => {
                     setLists(data);
                 });
             axios
-                .get('/colors', {
+                .get('http://todo-server-sl.herokuapp.com/colors', {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .then(({ data }) => {
@@ -72,7 +72,7 @@ function App() {
             });
             setLists(newList);
             axios
-                .delete('/tasks/' + taskId, {
+                .delete('http://todo-server-sl.herokuapp.com/tasks/' + taskId, {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .catch(() => {
@@ -97,7 +97,7 @@ function App() {
             setCanEdit(true);
             setLists(newList);
             axios
-                .patch('/tasks/' + taskObj.id, {text: taskObj.newTask}, {
+                .patch('http://todo-server-sl.herokuapp.com/tasks/' + taskObj.id, {text: taskObj.newTask}, {
                     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
                 })
                 .catch(() => {
@@ -120,7 +120,7 @@ function App() {
         });
         setLists(newList);
         axios
-            .patch('/tasks/' + taskId, {
+            .patch('http://todo-server-sl.herokuapp.com/tasks/' + taskId, {
                 completed
             }, {
                 headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credential': true }
